@@ -1,0 +1,34 @@
+<div class="sidebar">
+  <div class="logo">
+    <img src="assets/logo.png" alt="Infrrd Logo" />
+  </div>
+
+
+    <nav class="nav-items">
+      <ul>
+        <li *ngFor="let item of navItems">
+          <a (click)="item.label === 'Search' ? toggleSearchPanel() : navigateTo(item.route)">
+            <i [class]="item.label === 'Search' && isSearchPanelOpen ? 'close-icon' : item.icon"></i>
+            {{ item.label }}
+            <span *ngIf="item.notificationCount">{{ item.notificationCount }}</span>
+            <span *ngIf="item.active"></span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+  <div class="footer">
+    <div *ngFor="let item of footerItems" class="nav-item" [routerLink]="item.route">
+      <span [class]="item.icon"></span>
+      <span class="label">{{ item.label }}</span>
+    </div>
+  </div>
+</div>
+
+<div class="search-panel"  *ngIf="isSearchPanelOpen" [@panelAnimation]="isSearchPanelOpen ? 'open' : 'closed'">
+  <app-search (formSubmit)="filterContent($event)"></app-search>
+  <button class="close-button" (click)="toggleSearchPanel()">←</button>
+</div>
+
+  <div class="overlay" *ngIf="isSearchPanelOpen" (click)="toggleSearchPanel()"></div>
+

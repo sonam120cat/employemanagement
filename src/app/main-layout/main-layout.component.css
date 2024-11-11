@@ -1,0 +1,109 @@
+.main-layout {
+  display: flex;
+  /* height: 100vh;  */
+  overflow: hidden;
+  flex-direction: column;
+}
+
+app-sidebar {
+  width: 270px; /* Fixed width for the sidebar */
+  flex-shrink: 0; /* Prevents the sidebar from shrinking */
+  border-right: 1px solid #ddd; /* Optional: a border to separate sidebar from content */
+}
+
+app-employee-list {
+  flex: 1; /* Take up remaining space */
+  overflow-y: auto; /* Allows scrolling if the content overflows */
+  padding: 1em; /* Optional: padding for the employee list */
+  background-color: lightcyan; /* Background color for the main content area */
+}
+
+/* .main-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+} */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+  border-bottom: 1px solid #ddd;
+  background-color: #fff;
+}
+
+.header-left {
+  position: relative;
+}
+
+.notification-icon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.notification-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: red;
+  color: white;
+  font-size: 0.8em;
+  padding: 2px 5px;
+  border-radius: 50%;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.team-dropdown {
+  padding: 0.5em;
+  font-size: 1em;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  font-size: 0.9em;
+}
+
+.header-controls {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+  padding: 10px 20px; /* Adjust padding as needed */
+  border-bottom: 1px solid #ddd; /* Optional: to match the bottom border */
+}
+
+.notification-icon::before {
+  content: "🔔";
+  font-size: 24px; /* Adjust font size as needed */
+  position: relative;
+}
+
+
+
+.bangalore-checkbox {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+
+.bangalore-checkbox input[type="checkbox"] {
+  margin-right: 5px; /* Adjust spacing between checkbox and label */
+}
+
+.content{
+  display: flex;
+}
+
+select {
+  padding: 10px;
+  font-size: 16px;
+}
+
+

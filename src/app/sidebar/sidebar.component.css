@@ -1,0 +1,130 @@
+.sidebar {
+  width: 250px;
+  background-color: #f8f9fa;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 1em;
+}
+
+.logo {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.logo img {
+  max-width: 100px;
+}
+
+.nav-items, .footer {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  padding: 0.5em 0;
+  cursor: pointer;
+  color: #333;
+  text-decoration: none;
+}
+
+.nav-item:hover {
+  background-color: #e2e6ea;
+  border-radius: 4px;
+}
+
+.nav-item .label {
+  margin-left: 10px;
+  font-size: 1em;
+}
+
+.nav-item .badge {
+  margin-left: auto;
+  background-color: #dc3545;
+  color: white;
+  border-radius: 50%;
+  padding: 0.25em 0.5em;
+  font-size: 0.8em;
+}
+
+.footer {
+  margin-top: auto;
+  border-top: 1px solid #ddd;
+  padding-top: 1em;
+}
+
+.footer .nav-item {
+  margin-top: 0.5em;
+}
+
+
+.search-panel {
+  position: fixed;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 400px;
+  background-color: #f3f3f3;
+  box-shadow: -2px 0px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  transition: transform 0.3s ease;
+  z-index: 1000;
+}
+
+.search-panel.closed {
+  transform: translateX(100%);
+}
+
+.close-button {
+  position: absolute;
+  top: 20px;
+  left: 10px;
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 200px; /* Adjust to match the width of the sidebar */
+  width: calc(100% - 200px);
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  z-index: 900; /* Place below search panel but above main content */
+}
+
+.activeClass{
+  background-color: lightgray;
+}
+
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 60px;
+  }
+
+  .main-content {
+    display: none; /* Hide main content when the screen is small */
+  }
+
+  .overlay {
+    left: 60px; /* Adjust overlay position to match sidebar width */
+    width: calc(100% - 60px);
+  }
+}
+
+/* Icon styles, replace with actual icon paths or use a font library like FontAwesome */
+.overview-icon:before { content: "📊"; }
+.messages-icon:before { content: "📩"; }
+.search-icon:before { content: "🔍"; }
+.filter-icon:before { content: "⚙️"; }
+.history-icon:before { content: "📜"; }
+.account-icon:before { content: "👤"; }
+.help-icon:before { content: "❓"; }
+.signout-icon:before { content: "🚪"; }

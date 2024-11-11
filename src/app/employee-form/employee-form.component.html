@@ -1,0 +1,30 @@
+<div class="modal-overlay" (click)="onClose()"></div>
+<div class="modal">
+  <h2>{{ employee ? 'Edit Employee' : 'Add Employee' }}</h2>
+  <form (ngSubmit)="onSave()">
+    <label>
+      Name:
+      <input type="text" [(ngModel)]="formData.name" name="name" required />
+    </label>
+    <label>
+      Email:
+      <input type="email" [(ngModel)]="formData.email" name="email" required />
+    </label>
+    <label>
+      Contact No:
+      <input type="text" [(ngModel)]="formData.phone" name="contactNo" required />
+    </label>
+    <label>
+      Designation:
+      <select [(ngModel)]="formData.role" name="designation" required>
+        <option>Software Developer</option>
+        <option>Senior Software Developer</option>
+        <option>Quality Assurance</option>
+        <option>Technical Lead</option>
+        <option>Manager</option>
+      </select>
+    </label>
+    <button type="submit">{{ employee ? 'Save Changes' : 'Add Employee' }}</button>
+    <button type="button" (click)="onClose()">Cancel</button>
+  </form>
+</div>

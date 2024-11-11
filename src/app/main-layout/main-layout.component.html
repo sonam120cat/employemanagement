@@ -1,0 +1,19 @@
+<div class="main-layout">
+  <!-- Header Section -->
+  <div class="header-controls">
+    <div class="notification-icon"></div>
+    <select id="teamSelect" [(ngModel)]="selectedTeam">
+      <option *ngFor="let team of teams" [value]="team">{{ team }}</option>
+    </select>
+</div>
+
+
+  <!-- Sidebar and Employee List -->
+  <div class="content">
+    <app-sidebar></app-sidebar>
+    <app-employee-list [showOnlyBangalore]="showOnlyBangalore"></app-employee-list>
+  </div>
+</div>
+
+
+

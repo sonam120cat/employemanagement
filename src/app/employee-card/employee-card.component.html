@@ -1,0 +1,44 @@
+<div class="employee-card">
+  <div class="employee-header">
+    <img src="" alt="{{ employee.name }}" class="profile-picture">
+    <div class="employee-info">
+      <h3>{{ employee.name }}</h3>
+      <p>{{ employee.role }}</p>
+    </div>
+  </div>
+
+  <div class="rating">
+    <ng-container *ngFor="let filled of getStarsArray()">
+      <i class="star" [ngClass]="{ 'filled': filled }">&#9733;</i>
+    </ng-container>
+    <span class="rating-value">{{ employee.rating }} Rating</span>
+  </div>
+
+  <div class="details">
+    <p><strong>Experience:</strong> {{ employee.experience }}</p>
+    <p><strong>Date of Joining:</strong> {{ employee.joiningDate }}</p>
+    <p><strong>Current Team:</strong> {{ employee.team }}</p>
+    <p><strong>Reporting Manager:</strong> {{ employee.manager }}</p>
+  </div>
+
+  <div class="contact-info">
+    <a href="tel:{{ employee.phone }}" class="contact-item">
+      <span class="phone-icon"></span> {{ employee.phone }}
+    </a>
+    <a href="mailto:{{ employee.email }}" class="contact-item">
+      <span class="email-icon"></span> {{ employee.email }}
+    </a>
+  </div>
+   <div>
+    <button (click)="onEdit(employee)">Edit</button>
+    <button (click)="onDelete(employee)">Delete</button>
+  </div>
+</div>
+
+<app-employee-form
+    *ngIf="showModal"
+    [employee]="selectedEmployee"
+    (close)="onClose()"
+    (save)="onSave($event)"
+  ></app-employee-form>
+

@@ -1,0 +1,13 @@
+.employee-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2em;
+  padding: 1em;
+}
+
+.bangalore-checkbox {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 14px;
+}

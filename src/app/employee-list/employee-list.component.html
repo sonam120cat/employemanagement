@@ -1,0 +1,28 @@
+<div class="search-container">
+  <input [(ngModel)]="searchName" placeholder="Search by name" />
+  <input [(ngModel)]="searchEmail" placeholder="Search by email" />
+  <button (click)="searchEmployee()">Search</button>
+</div>
+<div class="bangalore-checkbox">
+  <input type="checkbox" id="bangalore" />
+  <label for="bangalore">Show only Bangalore Employees</label>
+</div>
+<div>
+<div class="employee-list">
+  <app-employee-card
+          *ngFor="let employee of filteredEmployees"
+          [employee]="employee">
+      </app-employee-card>
+</div>
+
+
+  <button (click)="onAdd()">Add Employee</button>
+  <app-employee-form
+    *ngIf="showModal"
+    [employee]="selectedEmployee"
+    (close)="onClose()"
+    (save)="onSave($event)"
+  ></app-employee-form>
+</div>
+
+

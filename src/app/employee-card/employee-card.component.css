@@ -1,0 +1,85 @@
+.employee-card {
+  width: 100%;
+  max-width: 300px;
+  padding: 1em;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.employee-header {
+  display: flex;
+  align-items: center;
+}
+
+.profile-picture {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 1em;
+}
+
+.employee-info h3 {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+.employee-info p {
+  margin: 0;
+  color: #666;
+}
+
+
+
+.details p {
+  margin: 0.2em 0;
+  font-size: 0.9em;
+  color: #333;
+}
+
+.contact-info {
+  display: flex;
+  gap: 1em;
+  margin-top: 1em;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  color: #007bff;
+  text-decoration: none;
+  font-size: 0.9em;
+}
+
+.contact-item i {
+  margin-right: 0.3em;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  margin: 8px 0;
+}
+
+.star {
+  font-size: 20px;
+  color: #ccc;
+}
+
+.star.filled {
+  color: #f4b400; /* Yellow color for filled stars */
+}
+
+.rating-value {
+  font-size: 14px;
+  color: #666;
+  margin-left: 8px;
+}
+
+/* Example icon styles (replace with actual icons) */
+.phone-icon::before { content: "📞"; }
+.email-icon::before { content: "✉️"; }
